@@ -881,84 +881,313 @@
 
 <!-- MENU -->
 <section id="menu">
-  <div class="section-tag">Lo que ofrecemos</div>
+  <div class="section-tag">Nuestro menú</div>
   <h2 class="section-title" style="color:var(--white)">Menú <span style="color:var(--gold)">Criollo</span></h2>
-  <p class="section-desc">Los sabores más queridos de Puerto Rico, preparados con la receta de siempre.</p>
+  <p class="section-desc" style="color:rgba(255,255,255,0.55);margin:0 auto 1rem;">Platillos auténticos preparados con la sazón que nos distingue. Acompañados con arroz, habichuelas y tu complemento favorito.</p>
+  <p style="color:rgba(212,160,32,0.8);font-size:0.82rem;margin-bottom:2.5rem;letter-spacing:0.05em;">⏰ Especial de Almuerzo · Lunes a Viernes · 11:00AM – 3:00PM</p>
 
   <div class="menu-tabs">
     <button class="tab-btn active" onclick="filterMenu(this,'todos')">Todos</button>
+    <button class="tab-btn" onclick="filterMenu(this,'aperitivos')">Aperitivos</button>
     <button class="tab-btn" onclick="filterMenu(this,'carnes')">Carnes</button>
-    <button class="tab-btn" onclick="filterMenu(this,'mofongo')">Mofongo</button>
-    <button class="tab-btn" onclick="filterMenu(this,'sirloin')">Sirloin & Chuleta</button>
-    <button class="tab-btn" onclick="filterMenu(this,'sopas')">Sopas</button>
-    <button class="tab-btn" onclick="filterMenu(this,'especialidades')">Especialidades</button>
+    <button class="tab-btn" onclick="filterMenu(this,'pollo')">Pollo</button>
+    <button class="tab-btn" onclick="filterMenu(this,'mofongo')">Mofongos</button>
+    <button class="tab-btn" onclick="filterMenu(this,'mariscos')">Mariscos</button>
+    <button class="tab-btn" onclick="filterMenu(this,'pastas')">Pastas</button>
+    <button class="tab-btn" onclick="filterMenu(this,'asopaos')">Asopaos</button>
   </div>
 
   <div class="menu-grid" id="menuGrid">
-    <div class="menu-card" data-cat="carnes">
-      <img src="https://images.unsplash.com/photo-1432139509613-5c4255815697?w=600&q=80" alt="Pernil asado" />
+
+    <!-- APERITIVOS -->
+    <div class="menu-card" data-cat="aperitivos">
+      <img src="https://images.unsplash.com/photo-1541014741259-de529411b96a?w=600&q=80" alt="Surtido" />
       <div class="menu-card-body">
-        <h3>Pernil Asado</h3>
-        <p>Pierna de cerdo marinada en adobo criollo y asada lentamente hasta quedar jugosa por dentro y crocante por fuera.</p>
-        <div class="menu-price">$16.95</div>
+        <h3>Surtido Pequeño</h3>
+        <p>Selección de aperitivos de la casa para compartir y abrir el apetito.</p>
+        <div class="menu-price">$18.00</div>
+      </div>
+    </div>
+    <div class="menu-card" data-cat="aperitivos">
+      <img src="https://images.unsplash.com/photo-1562967914-608f82629710?w=600&q=80" alt="Surtido Grande" />
+      <div class="menu-card-body">
+        <h3>Surtido Grande</h3>
+        <p>Versión grande de nuestro surtido — ideal para la mesa completa.</p>
+        <div class="menu-price">$30.00</div>
+      </div>
+    </div>
+    <div class="menu-card" data-cat="aperitivos">
+      <img src="https://images.unsplash.com/photo-1529042410759-befb1204b468?w=600&q=80" alt="Bacalaitos" />
+      <div class="menu-card-body">
+        <h3>Bacalaitos (12)</h3>
+        <p>Fritos crujientes de bacalao, dorados a la perfección. Un clásico boricua.</p>
+        <div class="menu-price">$12.00</div>
+      </div>
+    </div>
+    <div class="menu-card" data-cat="aperitivos">
+      <img src="https://images.unsplash.com/photo-1527477396000-e27163b481c2?w=600&q=80" alt="Alcapurrias" />
+      <div class="menu-card-body">
+        <h3>Alcapurrias (10)</h3>
+        <p>Masa de yautía y plátano rellena de carne, fritas hasta quedar doradas.</p>
+        <div class="menu-price">$10.00</div>
+      </div>
+    </div>
+    <div class="menu-card" data-cat="aperitivos">
+      <img src="https://images.unsplash.com/photo-1567620832903-9fc6debc209f?w=600&q=80" alt="Alitas" />
+      <div class="menu-card-body">
+        <h3>Alitas</h3>
+        <p>Alitas de pollo sazonadas al estilo El Yugo, perfectas para empezar.</p>
+        <div class="menu-price">$15.00</div>
+      </div>
+    </div>
+    <div class="menu-card" data-cat="aperitivos">
+      <img src="https://images.unsplash.com/photo-1559847844-5315695dadae?w=600&q=80" alt="Cóctel de Pulpo" />
+      <div class="menu-card-body">
+        <h3>Cóctel de Pulpo</h3>
+        <p>Pulpo tierno marinado en limón, tomate, cilantro y especias. Fresco y delicioso.</p>
+        <div class="menu-price">$13.00</div>
+      </div>
+    </div>
+
+    <!-- CARNES -->
+    <div class="menu-card" data-cat="carnes">
+      <img src="https://images.unsplash.com/photo-1544025162-d76694265947?w=600&q=80" alt="Chuleta Kan Kan" />
+      <div class="menu-card-body">
+        <h3>Chuleta Kan Kan ⭐</h3>
+        <p>La favorita de nuestros clientes según cientos de reseñas. Crocante por fuera, jugosa por dentro.</p>
+        <div class="menu-price">$21.00</div>
+      </div>
+    </div>
+    <div class="menu-card" data-cat="carnes">
+      <img src="https://images.unsplash.com/photo-1432139509613-5c4255815697?w=600&q=80" alt="Carne Frita" />
+      <div class="menu-card-body">
+        <h3>Carne Frita</h3>
+        <p>Trozos de cerdo fritos a la perfección, sazonados con adobo criollo.</p>
+        <div class="menu-price">$11.00</div>
+      </div>
+    </div>
+    <div class="menu-card" data-cat="carnes">
+      <img src="https://images.unsplash.com/photo-1558030006-450675393462?w=600&q=80" alt="Sirloin" />
+      <div class="menu-card-body">
+        <h3>Sirloin ⭐</h3>
+        <p>El sirloin calificado 20/10 por nuestros clientes. Jugoso, a punto y con sazón criolla.</p>
+        <div class="menu-price">$25.00</div>
+      </div>
+    </div>
+    <div class="menu-card" data-cat="carnes">
+      <img src="https://images.unsplash.com/photo-1534482421-64566f976cfa?w=600&q=80" alt="T-Bone" />
+      <div class="menu-card-body">
+        <h3>T-Bone</h3>
+        <p>Corte imponente asado a tu gusto, acompañado de los complementos de la casa.</p>
+        <div class="menu-price">$34.00</div>
+      </div>
+    </div>
+    <div class="menu-card" data-cat="carnes">
+      <img src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=600&q=80" alt="Churrasco 12oz" />
+      <div class="menu-card-body">
+        <h3>Churrasco 12oz</h3>
+        <p>Churrasco de 12oz con camarones salteados $38 · o Mofongo relleno de mariscos y churrasco $40.</p>
+        <div class="menu-price">desde $30.00</div>
+      </div>
+    </div>
+    <div class="menu-card" data-cat="carnes">
+      <img src="https://images.unsplash.com/photo-1546964124-0cce460f38ef?w=600&q=80" alt="Portherhouse" />
+      <div class="menu-card-body">
+        <h3>Portherhouse</h3>
+        <p>Uno de nuestros cortes más elegantes, para los que no se conforman con menos.</p>
+        <div class="menu-price">$26.00</div>
+      </div>
+    </div>
+
+    <!-- POLLO -->
+    <div class="menu-card" data-cat="pollo">
+      <img src="https://images.unsplash.com/photo-1527477396000-e27163b481c2?w=600&q=80" alt="Masitas de Pollo" />
+      <div class="menu-card-body">
+        <h3>Masitas de Pollo</h3>
+        <p>Masitas jugosas de pollo, doradas y listas para acompañarse con tus complementos favoritos.</p>
+        <div class="menu-price">$12.00</div>
+      </div>
+    </div>
+    <div class="menu-card" data-cat="pollo">
+      <img src="https://images.unsplash.com/photo-1574484284002-952d92456975?w=600&q=80" alt="Pechuga a la Parrilla" />
+      <div class="menu-card-body">
+        <h3>Pechuga a la Parrilla</h3>
+        <p>Pechuga asada a la parrilla con sazón criolla y tu salsa preferida.</p>
+        <div class="menu-price">$13.00</div>
+      </div>
+    </div>
+    <div class="menu-card" data-cat="pollo">
+      <img src="https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?w=600&q=80" alt="Pechuga Rellena" />
+      <div class="menu-card-body">
+        <h3>Pechuga Rellena</h3>
+        <p>Pechuga rellena de mofongo o queso y limón. Una preparación especial que sorprende.</p>
+        <div class="menu-price">$19.00</div>
+      </div>
+    </div>
+    <div class="menu-card" data-cat="pollo">
+      <img src="https://images.unsplash.com/photo-1598103442097-8b74394b95c1?w=600&q=80" alt="Alitas de Pollo" />
+      <div class="menu-card-body">
+        <h3>Alitas de Pollo</h3>
+        <p>Alitas sazonadas al estilo criollo. También disponibles empanadas, en salsa o a la BBQ con pico.</p>
+        <div class="menu-price">$10.00</div>
+      </div>
+    </div>
+
+    <!-- MOFONGOS -->
+    <div class="menu-card" data-cat="mofongo">
+      <img src="https://images.unsplash.com/photo-1565299585323-38d6b0865b47?w=600&q=80" alt="Mofongo Relleno de Camarones" />
+      <div class="menu-card-body">
+        <h3>Mofongo Relleno de Camarones</h3>
+        <p>Mofongo de plátano verde relleno de camarones. Un clásico puertorriqueño irresistible.</p>
+        <div class="menu-price">$21.00</div>
       </div>
     </div>
     <div class="menu-card" data-cat="mofongo">
-      <img src="https://images.unsplash.com/photo-1565299585323-38d6b0865b47?w=600&q=80" alt="Mofongo relleno" />
+      <img src="https://images.unsplash.com/photo-1547592166-23ac45744acd?w=600&q=80" alt="Mofongo con Caldo" />
       <div class="menu-card-body">
-        <h3>Mofongo Relleno</h3>
-        <p>Plátano verde frito majado con ajo y chicharrón, relleno de camarones al ajillo o pollo guisado.</p>
-        <div class="menu-price">$17.50</div>
+        <h3>Mofongo y Caldo</h3>
+        <p>El mofongo más sencillo y reconfortante, acompañado de su caldo caliente.</p>
+        <div class="menu-price">$8.00</div>
       </div>
     </div>
-    <div class="menu-card" data-cat="especialidades">
-      <img src="https://images.unsplash.com/photo-1574484284002-952d92456975?w=600&q=80" alt="Arroz con gandules" />
+    <div class="menu-card" data-cat="mofongo">
+      <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=600&q=80" alt="Mofongo Relleno de Churrasco" />
       <div class="menu-card-body">
-        <h3>Arroz con Gandules</h3>
-        <p>El clásico de la isla. Arroz cocido con gandules y sofrito casero, acompañado de tostones y ensalada.</p>
-        <div class="menu-price">$12.95</div>
+        <h3>Mofongo Relleno de Churrasco</h3>
+        <p>La combinación perfecta: mofongo criollo relleno de jugoso churrasco a la parrilla.</p>
+        <div class="menu-price">$26.00</div>
       </div>
     </div>
-    <div class="menu-card" data-cat="sopas">
-      <img src="https://images.unsplash.com/photo-1547592166-23ac45744acd?w=600&q=80" alt="Caldo Santo" />
+    <div class="menu-card" data-cat="mofongo">
+      <img src="https://images.unsplash.com/photo-1559847844-5315695dadae?w=600&q=80" alt="Mofongo Relleno de Mero" />
       <div class="menu-card-body">
-        <h3>Caldo Santo</h3>
-        <p>Sopa espesa con tubérculos, plátano, pollo y las especias criollas que reconfortan el alma.</p>
-        <div class="menu-price">$11.95</div>
+        <h3>Mofongo Relleno de Mero</h3>
+        <p>Mofongo relleno de filete de mero fresco. También disponible con dorado, pollo o pulpo.</p>
+        <div class="menu-price">$19.00</div>
       </div>
     </div>
-    <div class="menu-card" data-cat="carnes">
-      <img src="https://images.unsplash.com/photo-1544025162-d76694265947?w=600&q=80" alt="Chuletas guisadas" />
+
+    <!-- MARISCOS -->
+    <div class="menu-card" data-cat="mariscos">
+      <img src="https://images.unsplash.com/photo-1519984388953-d2406bc725e1?w=600&q=80" alt="Camarones" />
       <div class="menu-card-body">
-        <h3>Chuletas Guisadas</h3>
-        <p>Chuletas de cerdo en salsa criolla con papas, aceitunas y alcaparras. Servidas con arroz y habichuelas.</p>
-        <div class="menu-price">$15.50</div>
+        <h3>Camarones</h3>
+        <p>Camarones frescos preparados al ajillo, en salsa criolla o a tu preferencia.</p>
+        <div class="menu-price">$18.00</div>
       </div>
     </div>
-    <div class="menu-card" data-cat="especialidades">
-      <img src="https://images.unsplash.com/photo-1559847844-5315695dadae?w=600&q=80" alt="Habichuelas guisadas" />
+    <div class="menu-card" data-cat="mariscos">
+      <img src="https://images.unsplash.com/photo-1467003909585-2f8a72700288?w=600&q=80" alt="Salmón" />
       <div class="menu-card-body">
-        <h3>Habichuelas Guisadas</h3>
-        <p>Habichuelas rosadas en sofrito de tomates, ají dulce, cilantro y especias. El acompañante perfecto.</p>
-        <div class="menu-price">$5.95</div>
+        <h3>Salmón</h3>
+        <p>Filete de salmón fresco preparado con la sazón de la casa. Ligero y delicioso.</p>
+        <div class="menu-price">$15.00</div>
       </div>
     </div>
-    <div class="menu-card" data-cat="sirloin">
-      <img src="https://images.unsplash.com/photo-1558030006-450675393462?w=600&q=80" alt="Sirloin El Yugo" />
+    <div class="menu-card" data-cat="mariscos">
+      <img src="https://images.unsplash.com/photo-1485921325833-c519f76c4927?w=600&q=80" alt="Filete de Mero" />
       <div class="menu-card-body">
-        <h3>Sirloin El Yugo</h3>
-        <p>El sirloin más solicitado de San Sebastián — jugoso, a punto y con los acompañantes criollos de la casa. ¡20/10!</p>
-        <div class="menu-price">$22.95</div>
+        <h3>Filete de Mero</h3>
+        <p>Filete de mero fresco al estilo criollo. También disponible en masitas.</p>
+        <div class="menu-price">$18.00</div>
       </div>
     </div>
-    <div class="menu-card" data-cat="sirloin">
-      <img src="https://images.unsplash.com/photo-1544025162-d76694265947?w=600&q=80" alt="Chuleta Kan-Kan" />
+    <div class="menu-card" data-cat="mariscos">
+      <img src="https://images.unsplash.com/photo-1504198266287-1659872e6590?w=600&q=80" alt="Filete de Dorado" />
       <div class="menu-card-body">
-        <h3>Chuleta Kan-Kan ⭐</h3>
-        <p>La favorita de nuestros clientes. Crocante por fuera, jugosa por dentro. La mejor que vas a probar.</p>
-        <div class="menu-price">$19.95</div>
+        <h3>Filete de Dorado</h3>
+        <p>Dorado fresco preparado a tu gusto. También disponible en masitas.</p>
+        <div class="menu-price">$20.00</div>
       </div>
     </div>
+    <div class="menu-card" data-cat="mariscos">
+      <img src="https://images.unsplash.com/photo-1559847844-5315695dadae?w=600&q=80" alt="Ensalada de Pulpo" />
+      <div class="menu-card-body">
+        <h3>Ensalada de Pulpo</h3>
+        <p>Pulpo tierno marinado con vegetales frescos, limón y especias criollas.</p>
+        <div class="menu-price">$18.00</div>
+      </div>
+    </div>
+
+    <!-- PASTAS -->
+    <div class="menu-card" data-cat="pastas">
+      <img src="https://images.unsplash.com/photo-1621996346565-e3dbc646d9a9?w=600&q=80" alt="Pasta de Pollo" />
+      <div class="menu-card-body">
+        <h3>Pasta de Pollo</h3>
+        <p>Pasta cremosa con pollo jugoso y la sazón que caracteriza a El Yugo II.</p>
+        <div class="menu-price">$14.00</div>
+      </div>
+    </div>
+    <div class="menu-card" data-cat="pastas">
+      <img src="https://images.unsplash.com/photo-1563379926898-05f4575a45d8?w=600&q=80" alt="Pasta de Camarones" />
+      <div class="menu-card-body">
+        <h3>Pasta de Camarones</h3>
+        <p>Pasta con camarones frescos en salsa cremosa. Irresistible.</p>
+        <div class="menu-price">$20.00</div>
+      </div>
+    </div>
+    <div class="menu-card" data-cat="pastas">
+      <img src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=600&q=80" alt="Pasta de Churrasco" />
+      <div class="menu-card-body">
+        <h3>Pasta de Churrasco</h3>
+        <p>Pasta con trozos de churrasco a la parrilla. Una combinación que enamora.</p>
+        <div class="menu-price">$26.00</div>
+      </div>
+    </div>
+    <div class="menu-card" data-cat="pastas">
+      <img src="https://images.unsplash.com/photo-1551183053-bf91798d792b?w=600&q=80" alt="Pasta Mar y Tierra" />
+      <div class="menu-card-body">
+        <h3>Pasta Mar y Tierra</h3>
+        <p>La pasta más completa: camarones, churrasco y la sazón criolla en un solo plato.</p>
+        <div class="menu-price">$32.00</div>
+      </div>
+    </div>
+
+    <!-- ASOPAOS -->
+    <div class="menu-card" data-cat="asopaos">
+      <img src="https://images.unsplash.com/photo-1547592166-23ac45744acd?w=600&q=80" alt="Asopao de Pollo" />
+      <div class="menu-card-body">
+        <h3>Asopao de Pollo</h3>
+        <p>El asopao criollo más clásico. Arroz caldoso con pollo y las especias de siempre.</p>
+        <div class="menu-price">$14.00</div>
+      </div>
+    </div>
+    <div class="menu-card" data-cat="asopaos">
+      <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=600&q=80" alt="Asopao de Camarones" />
+      <div class="menu-card-body">
+        <h3>Asopao de Camarones</h3>
+        <p>Asopao caldoso con camarones frescos. Reconfortante y lleno de sabor.</p>
+        <div class="menu-price">$22.00</div>
+      </div>
+    </div>
+    <div class="menu-card" data-cat="asopaos">
+      <img src="https://images.unsplash.com/photo-1519984388953-d2406bc725e1?w=600&q=80" alt="Asopao Mixto" />
+      <div class="menu-card-body">
+        <h3>Asopao Mixto</h3>
+        <p>Pulpo y camarones juntos en un asopao caldoso criollo. El más completo.</p>
+        <div class="menu-price">$26.00</div>
+      </div>
+    </div>
+    <div class="menu-card" data-cat="asopaos">
+      <img src="https://images.unsplash.com/photo-1485921325833-c519f76c4927?w=600&q=80" alt="Asopao de Mero" />
+      <div class="menu-card-body">
+        <h3>Asopao de Mero</h3>
+        <p>Asopao con mero fresco al estilo criollo. También disponible de dorado.</p>
+        <div class="menu-price">$20.00</div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Complementos note -->
+  <div style="background:rgba(255,255,255,0.05);border:1px solid rgba(212,160,32,0.25);border-radius:1rem;padding:1.5rem 2rem;margin-top:2.5rem;max-width:860px;margin-left:auto;margin-right:auto;text-align:left;">
+    <p style="color:var(--gold);font-weight:700;font-size:0.85rem;letter-spacing:0.08em;text-transform:uppercase;margin-bottom:0.7rem;">🍚 Complementos disponibles</p>
+    <p style="color:rgba(255,255,255,0.55);font-size:0.85rem;line-height:1.8;">
+      Arroz blanco y habichuelas · Mamposteado · Tostones · Arañitas · Amarillos · Majado de vianda · Mofongo · Bifongo · Papas fritas · Papas salteadas · Papas majadas · Batatas fritas · Vegetales mixtos · Brócoli · Ensalada · Majas queso y bacon
+      <br /><span style="color:rgba(212,160,32,0.7);">Complemento extra +$4 &nbsp;·&nbsp; Mofongo y caldo o tostones +$2</span>
+    </p>
+    <p style="color:rgba(255,255,255,0.4);font-size:0.8rem;margin-top:0.8rem;">🧄 Salsas: Ajillo · Criolla · Zetas · Mantequilla · Guayaba · Cremosa de ajo · Cilantro</p>
+    <p style="color:rgba(255,255,255,0.4);font-size:0.8rem;margin-top:0.4rem;">👦 Menú de niños (menores de 12 años): Pasta de pollo $8 · Masitas de mero $8 · Alitas $5 · Churrasco 8oz $16 · Masitas de pollo empanadas $7</p>
   </div>
 
   <div class="menu-cta-wrap">
