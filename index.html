@@ -1120,22 +1120,26 @@
   <div class="section-tag" style="justify-content:center">Reservaciones</div>
   <h2 class="section-title">Reserva tu mesa <span style="color:var(--gold)">hoy mismo</span></h2>
   <p class="section-desc">Asegura tu lugar y disfruta de la mejor comida criolla de San Sebastián.</p>
-  <form class="reservar-form" onsubmit="handleReserva(event)">
+  <form class="reservar-form" onsubmit="handleReserva(event)" id="reservaForm">
     <div class="form-group">
-      <label>Nombre</label>
-      <input type="text" placeholder="Tu nombre" required />
+      <label for="r-nombre">Nombre completo</label>
+      <input id="r-nombre" type="text" placeholder="Tu nombre" required />
     </div>
     <div class="form-group">
-      <label>Fecha</label>
-      <input type="date" required />
+      <label for="r-tel">Teléfono</label>
+      <input id="r-tel" type="tel" placeholder="(787) 000-0000" pattern="[\d\s\(\)\-\+]{7,15}" required />
     </div>
     <div class="form-group">
-      <label>Hora</label>
-      <input type="time" min="11:00" max="21:00" required />
+      <label for="r-fecha">Fecha</label>
+      <input id="r-fecha" type="date" required />
     </div>
     <div class="form-group">
-      <label>Personas</label>
-      <select required>
+      <label for="r-hora">Hora</label>
+      <input id="r-hora" type="time" min="11:00" max="21:00" required />
+    </div>
+    <div class="form-group">
+      <label for="r-personas">Personas</label>
+      <select id="r-personas" required>
         <option value="">— Elige —</option>
         <option>1 persona</option>
         <option>2 personas</option>
@@ -1145,9 +1149,9 @@
         <option>+10 personas</option>
       </select>
     </div>
-    <button type="submit" class="btn-primary">✅ Confirmar reservación</button>
+    <button type="submit" class="btn-primary">💬 Reservar por WhatsApp</button>
   </form>
-  <p class="reservar-note">¿Prefieres llamar? <a href="tel:+17872359774">📞 (787) 235-9774</a> &nbsp;·&nbsp; O escríbenos por <a href="https://wa.me/17872359774" target="_blank">WhatsApp</a></p>
+  <p class="reservar-note">Al confirmar se abrirá WhatsApp con tu solicitud lista para enviar &nbsp;·&nbsp; ¿Prefieres llamar? <a href="tel:+17872359774">📞 (787) 235-9774</a></p>
 </section>
 
 <!-- INFO -->
@@ -1213,16 +1217,37 @@
 
   function handleReserva(e) {
     e.preventDefault();
-    const btn = e.target.querySelector('button[type=submit]');
-    btn.textContent = '✅ ¡Reservación enviada!';
-    btn.style.background = '#2ecc71';
-    btn.style.color = '#fff';
-    setTimeout(() => {
-      btn.textContent = '✅ Confirmar reservación';
-      btn.style.background = '';
-      btn.style.color = '';
-      e.target.reset();
-    }, 3500);
+
+    const nombre   = document.getElementById('r-nombre').value.trim();
+    const tel      = document.getElementById('r-tel').value.trim();
+    const fecha    = document.getElementById('r-fecha').value;
+    const hora     = document.getElementById('r-hora').value;
+    const personas = document.getElementById('r-personas').value;
+
+    // Format date to readable Spanish
+    const [y, m, d] = fecha.split('-');
+    const meses = ['enero','febrero','marzo','abril','mayo','junio','julio','agosto','septiembre','octubre','noviembre','diciembre'];
+    const fechaTexto = `${parseInt(d)} de ${meses[parseInt(m)-1]} de ${y}`;
+
+    // Format time to 12h
+    const [hh, mm] = hora.split(':');
+    const h = parseInt(hh);
+    const horaTexto = `${h > 12 ? h-12 : h || 12}:${mm} ${h >= 12 ? 'PM' : 'AM'}`;
+
+    const mensaje =
+`🍽️ *Solicitud de Reservación – El Yugo II*
+
+👤 *Nombre:* ${nombre}
+📞 *Teléfono:* ${tel}
+📅 *Fecha:* ${fechaTexto}
+🕐 *Hora:* ${horaTexto}
+👥 *Personas:* ${personas}
+
+¡Hola! Me gustaría reservar una mesa con los datos indicados. ¿Está disponible?`;
+
+    const url = `https://wa.me/17872359774?text=${encodeURIComponent(mensaje)}`;
+    window.open(url, '_blank');
+    e.target.reset();
   }
 
   const observer = new IntersectionObserver(entries => {
