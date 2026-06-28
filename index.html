@@ -519,7 +519,7 @@
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 1.5rem;
-      margin-top: 3rem;
+      margin-top: 1rem;
     }
     .review-card {
       background: var(--white);
@@ -828,8 +828,8 @@
     <div class="stat-label">Clientes por semana</div>
   </div>
   <div class="stat-item">
-    <div class="stat-number">4.9★</div>
-    <div class="stat-label">Calificación en Facebook</div>
+    <div class="stat-number">98%</div>
+    <div class="stat-label">Lo recomiendan · 274 reseñas</div>
   </div>
 </div>
 
@@ -889,6 +889,7 @@
     <button class="tab-btn active" onclick="filterMenu(this,'todos')">Todos</button>
     <button class="tab-btn" onclick="filterMenu(this,'carnes')">Carnes</button>
     <button class="tab-btn" onclick="filterMenu(this,'mofongo')">Mofongo</button>
+    <button class="tab-btn" onclick="filterMenu(this,'sirloin')">Sirloin & Chuleta</button>
     <button class="tab-btn" onclick="filterMenu(this,'sopas')">Sopas</button>
     <button class="tab-btn" onclick="filterMenu(this,'especialidades')">Especialidades</button>
   </div>
@@ -940,6 +941,22 @@
         <h3>Habichuelas Guisadas</h3>
         <p>Habichuelas rosadas en sofrito de tomates, ají dulce, cilantro y especias. El acompañante perfecto.</p>
         <div class="menu-price">$5.95</div>
+      </div>
+    </div>
+    <div class="menu-card" data-cat="sirloin">
+      <img src="https://images.unsplash.com/photo-1558030006-450675393462?w=600&q=80" alt="Sirloin El Yugo" />
+      <div class="menu-card-body">
+        <h3>Sirloin El Yugo</h3>
+        <p>El sirloin más solicitado de San Sebastián — jugoso, a punto y con los acompañantes criollos de la casa. ¡20/10!</p>
+        <div class="menu-price">$22.95</div>
+      </div>
+    </div>
+    <div class="menu-card" data-cat="sirloin">
+      <img src="https://images.unsplash.com/photo-1544025162-d76694265947?w=600&q=80" alt="Chuleta Kan-Kan" />
+      <div class="menu-card-body">
+        <h3>Chuleta Kan-Kan ⭐</h3>
+        <p>La favorita de nuestros clientes. Crocante por fuera, jugosa por dentro. La mejor que vas a probar.</p>
+        <div class="menu-price">$19.95</div>
       </div>
     </div>
   </div>
@@ -1015,40 +1032,86 @@
 <section id="reviews">
   <div class="section-tag">Lo que dicen</div>
   <h2 class="section-title">Opiniones de nuestros <span class="accent">clientes</span></h2>
+  <!-- Facebook rating badge -->
+  <div style="display:inline-flex;align-items:center;gap:0.6rem;background:var(--white);border:2px solid var(--gold);border-radius:2rem;padding:0.6rem 1.4rem;margin-bottom:2.5rem;box-shadow:0 4px 16px rgba(0,0,0,0.07);">
+    <span style="font-size:1.5rem;">📘</span>
+    <div style="text-align:left;">
+      <div style="font-size:1rem;font-weight:700;color:var(--dark);">98% lo recomiendan</div>
+      <div style="font-size:0.76rem;color:var(--text-muted);">274 reseñas verificadas en Facebook</div>
+    </div>
+  </div>
+
   <div class="reviews-grid">
     <div class="review-card">
       <div class="stars">★★★★★</div>
-      <p class="review-text">"El mejor mofongo de San Sebastián, sin duda. El pernil estaba jugosísimo y la atención fue increíble. Ya es nuestro lugar para las reuniones de familia los domingos."</p>
+      <p class="review-text">"Excelente!!! Servicio, Ambiente y Comida. Personal muy atento y amable. Comida 20/10."</p>
       <div class="reviewer">
-        <div class="reviewer-avatar">MR</div>
+        <div class="reviewer-avatar">AT</div>
         <div>
-          <div class="reviewer-name">María Rivera</div>
-          <div class="reviewer-meta">Cliente frecuente · Facebook</div>
+          <div class="reviewer-name">Adalberto Torre</div>
+          <div class="reviewer-meta">Reseña verificada · Facebook</div>
         </div>
       </div>
     </div>
     <div class="review-card">
       <div class="stars">★★★★★</div>
-      <p class="review-text">"Celebramos el cumpleaños de mi mamá aquí y fue perfecto. Las habichuelas guisadas y el arroz con gandules saben igual que los de casa. Gracias por tanto sabor."</p>
+      <p class="review-text">"Excelente servicio! La comida siempre consistente! El sirloin es 20/10 ⭐"</p>
       <div class="reviewer">
-        <div class="reviewer-avatar">CL</div>
+        <div class="reviewer-avatar">AC</div>
         <div>
-          <div class="reviewer-name">Carlos López</div>
-          <div class="reviewer-meta">Evento familiar · Google</div>
+          <div class="reviewer-name">Alexander Cardona</div>
+          <div class="reviewer-meta">Reseña verificada · Facebook</div>
         </div>
       </div>
     </div>
     <div class="review-card">
       <div class="stars">★★★★★</div>
-      <p class="review-text">"El caldo santo es tremendo. Cada vez que vengo de visita a Puerto Rico, El Yugo II es parada obligada. La sazón criolla que solo ellos saben dar. 10/10 siempre."</p>
+      <p class="review-text">"La mejor chuleta kan-kan que hemos comido, toda la comida rica y excelente servicio!"</p>
       <div class="reviewer">
-        <div class="reviewer-avatar">AG</div>
+        <div class="reviewer-avatar">PR</div>
         <div>
-          <div class="reviewer-name">Ana González</div>
-          <div class="reviewer-meta">Cliente desde 2012 · Google</div>
+          <div class="reviewer-name">Paola Rios</div>
+          <div class="reviewer-meta">Reseña verificada · Facebook</div>
         </div>
       </div>
     </div>
+    <div class="review-card">
+      <div class="stars">★★★★★</div>
+      <p class="review-text">"Los recomiendo al 100%: el trato excelente, la comida, limpieza, servicio — ¡en fin de mis top #1!"</p>
+      <div class="reviewer">
+        <div class="reviewer-avatar">AB</div>
+        <div>
+          <div class="reviewer-name">Axel BV</div>
+          <div class="reviewer-meta">Reseña verificada · Facebook</div>
+        </div>
+      </div>
+    </div>
+    <div class="review-card">
+      <div class="stars">★★★★★</div>
+      <p class="review-text">"Excelente lugar para pasarlo en familia, nos encantó."</p>
+      <div class="reviewer">
+        <div class="reviewer-avatar">LF</div>
+        <div>
+          <div class="reviewer-name">Lynette Feliciano</div>
+          <div class="reviewer-meta">Reseña verificada · Facebook</div>
+        </div>
+      </div>
+    </div>
+    <div class="review-card">
+      <div class="stars">★★★★★</div>
+      <p class="review-text">"Excelente lugar! Servicio de calidad. La comida riquísima y acabada de hacer! Un lugar para regresar 🤍"</p>
+      <div class="reviewer">
+        <div class="reviewer-avatar">JM</div>
+        <div>
+          <div class="reviewer-name">Javier Maldonado</div>
+          <div class="reviewer-meta">Reseña verificada · Facebook</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div style="margin-top:2.5rem;">
+    <a href="https://www.facebook.com/share/14fdR23RmPL/" target="_blank" class="btn-primary">📘 Ver todas las reseñas en Facebook</a>
   </div>
 </section>
 
